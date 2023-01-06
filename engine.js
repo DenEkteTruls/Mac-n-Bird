@@ -9,18 +9,24 @@ class Universe
 {
     constructor(engine, w, h)
     {
-        this.x = 0;
         this.w = w;
         this.h = h;
-
-        this.speed = 0.01;
         this.engine = engine;
+        this.__initialize_variables();
+    }
+
+
+    __initialize_variables()
+    {
+        this.x = 0;
+        this.speed = 0.01;
 
         this.level1 = [
             [1, 2, 1, 1, 3, 2],
             [1, 2, 1, 3, 1, 2]
         ];
     }
+
 
     generateObjectsFromLevel(level)
     {
@@ -59,15 +65,16 @@ class Engine
 {
     constructor(canvasID)
     {
-        this.__initialize_canvas(canvasID);
+        this.canvasID = canvasID;
+        this.__initialize_canvas();
         this.__initialize_variables();
     }
 
 
-    __initialize_canvas(canvasID)
+    __initialize_canvas()
     {
         try {
-            this.canvas = document.getElementById(canvasID);
+            this.canvas = document.getElementById(this.canvasID);
             this.ctx = this.canvas.getContext("2d");
             console.log("Engine initialized...");
         } catch {
@@ -120,7 +127,7 @@ class Engine
             }
         }
     }
-
+  
 
     render_gameObjects()
     {

@@ -20,8 +20,13 @@ engine.add_gameObject(player);
 
 
 
-let gameLoop = setInterval(() => {
+function gameLoop()
+{
     engine.render_gameObjects();
 
-    if(!engine.running) clearInterval(gameLoop);
-}, 16.75);
+    window.requestAnimationFrame(gameLoop);
+    if(!engine.running) window.location.href = "/";
+}
+
+
+gameLoop();

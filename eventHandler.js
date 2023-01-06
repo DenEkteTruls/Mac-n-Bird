@@ -16,6 +16,12 @@ class eventHandler
     }
 
 
+    reset()
+    {
+        this.eventQueue = [];
+    }
+
+
     printEventQueue()
     {
         console.log(this.eventQueue);
@@ -75,6 +81,12 @@ export class JumpEventHandler extends eventHandler
     }
 
 
+    reset()
+    {
+        this.last_time = Date.now();
+    }
+
+
     handle(object)
     {
         if(object.new_time && object.alive) {
@@ -97,6 +109,12 @@ export class GravityEventHandler extends eventHandler
         this.height = height;
         this.last_time = Date.now();
         this.collisionHandler = collisionHandler;
+    }
+
+
+    reset()
+    {
+        this.last_time = Date.now();
     }
 
 

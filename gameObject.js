@@ -1,8 +1,11 @@
 
 export class gameObject
 {
-    constructor(x, y, w, h, render = false)
+    constructor(x, y, w, h, render)
     {
+        this.start_x = x;
+        this.start_y = y;
+
         this.x = x;
         this.y = y;
         this.w = w;

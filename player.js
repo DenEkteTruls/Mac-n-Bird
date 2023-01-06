@@ -4,7 +4,7 @@ import { gameObject } from "./gameObject.js";
 
 export class Player extends gameObject
 {
-    constructor(x, y, w, h, render = false)
+    constructor(x, y, w, h, render)
     {
         super(x, y, w, h, render);
 
