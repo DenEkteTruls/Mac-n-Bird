@@ -24,8 +24,11 @@ function gameLoop()
 {
     engine.render_gameObjects();
 
-    window.requestAnimationFrame(gameLoop);
-    if(!engine.running) window.location.href = "/";
+    if(engine.running) {
+        window.requestAnimationFrame(gameLoop);    
+    } else {
+        window.location.reload();
+    }
 }
 
 
