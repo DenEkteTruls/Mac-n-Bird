@@ -91,7 +91,7 @@ export class JumpEventHandler extends eventHandler
     {
         if(object.new_time && object.alive) {
             object.new_time = false;
-            object.playerSpeed = 7;
+            object.playerSpeed = 4;
             this.last_time = Date.now();
         }
     }

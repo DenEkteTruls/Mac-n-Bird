@@ -2,7 +2,7 @@
 import { gameObject } from "./gameObject.js";
 
 
-
+const random_number = () => Math.floor(Math.random() * 3);
 
 
 class Universe
@@ -21,10 +21,11 @@ class Universe
         this.x = 0;
         this.speed = 0.01;
 
-        this.level1 = [
-            [1, 2, 1, 1, 3, 2],
-            [1, 2, 1, 3, 1, 2]
-        ];
+        this.level1 = [[], []];
+        for(let i = 0; i < 20; i++) {
+            this.level1[0].push(random_number())
+            this.level1[1].push(random_number())
+        }
     }
 
 
